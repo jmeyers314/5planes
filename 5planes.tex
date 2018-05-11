@@ -56,7 +56,7 @@ asserting a scalar diffraction theory.  A more accurate vector diffraction theor
 $\exp\left(\phi_{\vec{k}}\right)$ with something like $\vec{E}_{\vec{k}} \exp\left(i
 \phi_{\vec{k}}\right)$ and the resulting amplitude would also be a vector quantity.
 
-The PSF intensity given by \ref{eqn:Huygens} is then given by the square of the electric field
+The PSF intensity given by Eq. \ref{eqn:Huygens} is then given by the square of the electric field
 amplitude, which in our scalar field theory is:
 
 \begin{equation}
@@ -105,19 +105,19 @@ uniform over the telescope entrance pupil, which leads us to use a particularly 
 describe the entrance pupil plane, with primitive lattice vectors
 
 \begin{equation}
-    \vec{u}_1 = \Delta u \hat{\imath}
+    \vec{u}_1 = \Delta u \, \hat{\imath}
 \end{equation}
 and
 \begin{equation}
-    \vec{u}_2 = \Delta u \hat{\jmath}
+    \vec{u}_2 = \Delta u \, \hat{\jmath}
 \end{equation}
 
 for some asserted sampling length $\Delta u$. (Note we are overloading the i and j characters again,
 this time with hats to indicate they are unit vectors.)
 
 We wouldn't necessarily need a square lattice for the pupil -- parallelograms would be okay, or even
-a hexagonal "lattice" (uniformity is important though) --  but a square lattice is easy so we stick
-with that for now.
+a hexagonal ``lattice'' (uniformity is important though) --  but a square lattice is easy so we
+stick with that for now.
 
 We interpret each point in the pupil lattice as an incoming ray.  Because they represent a plane
 wave, the rays' directions of propagation are all identical, forming some angle with the optic axis.
@@ -130,7 +130,7 @@ Eq. \ref{eqn:Huygens} to determine the PSF at any location of interest.
 \section{Paraxial Optics}
 
 We'll first describe obtaining $K$ using paraxial optics, which basically means we assume that the
-rays are close to the optic axis and $\sin \theta \approx \theta$.
+rays are close to the optic axis and $\tan \theta \approx \sin \theta \approx \theta$.
 
 \subsection{Focal Plane}
 
@@ -141,7 +141,7 @@ both the number of rays used and the number of evaluation points.  In practice, 
 interested in a square lattice of rays (with say N rays on a side) and square lattice of evaluation
 points (with M points on a side), so the direct sum is $O(M^2 N^2)$.  Fortunately, Eq.
 \ref{eqn:Huygens} can, with a few approximations, be manipulated into the form of a 2D Discrete
-Fourier transform, which can be evaluated in $O(N^2 \log N)$ time, provided we are able to give up
+Fourier Transform, which can be evaluated in $O(N^2 \log N)$ time, provided we are able to give up
 the freedom to choose both M and N independently.
 
 The approximation enabling the use of a Fourier transform concerns the relation between a ray's
@@ -309,9 +309,10 @@ planes of interest, determined by tracing rays.
 Leaving the grid on the pupil plane the same as in the paraxial case, our first difference for more
 precise optics concerns the relation between the pupil plane and the Fourier conjugate to the image
 plane; i.e., $\vec{k}(\vec{u})$.  Figure \ref{fig:ku} shows the relationship between $\vec{k}$ and
-$\vec{u}$ for the Subaru/HSC telescope and camera for an incoming plane wave tilted 0.01 radians to
-the optic axis in the +y direction, determined using the raytracing software \textsc{batoid}.  The
-relationship is quite linear as expected.
+$\vec{u}$ for the Subaru/HSC telescope and camera determined using the raytracing software \textsc{batoid}.
+
+The incoming plane wave has wavelength $750 nm$ and is tilted $0.01$ radians to the optic axis in
+the +y direction.
 
 \begin{figure}
     \includegraphics[scale=0.7]{ku.png}
@@ -324,10 +325,10 @@ relationship is quite linear as expected.
     \label{fig:ku}
 \end{figure}
 
-To determine just how linear the relations are, we show the residuals to bilinear fits of $k_x$ and
-$k_y$ against $u_x$ and $u_y$ in figure \ref{fig:dku}.  The coefficients in the fit (ignoring the
-constant piece), are the Jacobian of the transformation between $\vec{u}$ and $\vec{k}$.  For this
-particular situation, this Jacobian is:
+To demonstrate just how linear the relations are, we show the residuals to bilinear fits of $k_x$
+and $k_y$ against $u_x$ and $u_y$ in figure \ref{fig:dku}.  The coefficients in the fit (ignoring
+the constant piece), are the Jacobian of the transformation between $\vec{u}$ and $\vec{k}$.  For
+this particular situation, this Jacobian is:
 
 
 \begin{gather}
@@ -337,12 +338,16 @@ particular situation, this Jacobian is:
                   \frac{\partial k_y}{\partial u_x} & \frac{\partial k_y}{\partial u_y} \end{bmatrix}
  =
   \begin{bmatrix}
-   -4.5 \cdot 10^5 & 6.2 \cdot 10^{-2} \\
-   2.1 \cdot 10^{-1} & -4.3 \cdot 10^5
+   -4.49 \times 10^5 & 6.62 \times 10^{-2} \\
+   2.11 \times 10^{-1} & -4.33 \times 10^5
    \end{bmatrix}
 \end{gather}
 
 (in units of radians of phase per meter squared).
+
+The off-diagonal elements above ought to be zero for a perfectly symmetric optical system.  The HSC
+obscuration pattern (from the spider) is not perfectly symmetric, however, so these terms show up as
+non-zero, though still subdominant to the diagonal entries.
 
 \begin{figure}
     \includegraphics[scale=0.7]{dku.png}
@@ -365,22 +370,72 @@ diagonal components are not the \textit{same}.  In particular, using $\vec{k} = 
 \vec{k}}{\partial \vec{u}} \vec{u}$ and Eq. \ref{eqn:reciprocal}, we find
 
 \begin{equation}
-    \vec{x}_1 =
+    \vec{x}_1 = \frac{1}{N \Delta u} (-1.40 \times 10^{-5} \hat{\imath} + 2.14 \times 10^{-12} \hat{\jmath})
 \end{equation}
 
 \begin{equation}
-    \vec{x}_2 =
+    \vec{x}_2 = \frac{1}{N \Delta u} (-6.80 \times 10^{-12} \hat{\imath} - 1.45 \times 10^{-5} \hat{\jmath})
 \end{equation}
 
 \subsection{Sky plane}
 
+To transform from focal plane coordinates to sky coordinates, we use \textsc{batoid} to trace ray
+grids with slightly different incoming angles and look at where they focus on the focal plane to
+measure the Jacobian from a finite difference.  Because we specify the incoming ray angles using a
+gnomic projection, a second analytic Jacobian is then applied to convert from gnomic primitive vectors
+to spherical primitive vectors.
 
+Continuing the above example, I find gnomic primitives of
+
+\begin{equation}
+    \vec{g}_1 = \frac{1}{N \Delta u} (-7.50 \times 10^{-7} \hat{\imath} + 1.13 \times 10^{-12} \hat{\jmath})
+\end{equation}
+
+\begin{equation}
+    \vec{g}_2 = \frac{1}{N \Delta u} (1.39 \times 10^{-11} \hat{\imath} + -7.50 \times 10^{-7} \hat{\jmath})
+\end{equation}
+
+and spherical primitives of
+
+\begin{equation}
+    \vec{\theta}_1 = \frac{1}{N \Delta u} (1.13 \times 10^{-12} \hat{\imath} + 7.50 \times 10^{-7} \hat{\jmath})
+\end{equation}
+
+\begin{equation}
+    \vec{\theta}_2 = \frac{1}{N \Delta u} (-7.50 \times 10^{-7} \hat{\imath} -1.39 \times 10^{-11} \hat{\jmath}).
+\end{equation}
+
+The spherical coordinate differentials $\delta \vec{\theta}_1$ and $\delta \vec{\theta}_2$ can be
+thought of as $\delta \phi$ and $\sin(\phi) \delta \theta$, where $\phi$ is the polar angle measured
+from the optic axis, and $\theta$ is the azimuthal angle measured counter-clockwise from the
+positive x-axis.  The conversion from gnomic primitive vectors to local spherical vectors is
+essentially only a rotation for this small field angle.
+
+Notice that the diagonal elements are now equal, removing the distortion that appears in focal plane
+coordinates!  This result appears to be robust, being reproducible for Subaru/HSC, LSST, and
+Blanco/DECam optics and for various field angles.  I think this is likely a consequence of
+Liouville's theorem applied to optics, which roughly corresponds to
+
+\begin{equation}
+    \delta \vec{u} \delta \vec{\theta} \propto \delta \vec{k} \delta {x}
+\end{equation}
+
+or
+
+\begin{equation}
+    \frac{\partial \vec{k}}{\partial \vec{u}} \cdot \frac{\partial \vec{\theta}}{\partial \vec{x}} \propto \mathbb{1}_2
+\end{equation}
+
+At any rate, it appears that we can ignore complications of coordinate systems and WCS's if we
+generate optical PSFs directly in sky coordinates.
 
 \section{TODO}
 
 \begin{itemize}
     \item Explicitly write out $\tilde{I}\left(\vec{q}\right)$
     \item Add plots and commentary of $\vec{\theta}$ vs $\vec{x}$.
+    \item Comment on difference between gnomic and spherical, but don't do the computation since
+          it's very close to a pure rotation.
 \end{itemize}
 
 \end{document}
