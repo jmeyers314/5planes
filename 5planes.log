@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  11 MAY 2018 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 MAY 2018 19:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -619,62 +619,77 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 42.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+bbold on input line 77.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 80.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/bbold/Ubbold.fd)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 92.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
  [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <wavevector.png, id=17, 346.896pt x 185.0112pt>
 File: wavevector.png Graphic file (type png)
  <use wavevector.png>
-Package pdftex.def Info: wavevector.png used on input line 152.
+Package pdftex.def Info: wavevector.png used on input line 155.
 (pdftex.def)             Requested size: 346.89514pt x 185.01074pt.
  [2] [3 <./wavevector.png>] <PlateScale.png, id=27, 413.8662pt x 239.6955pt>
 File: PlateScale.png Graphic file (type png)
  <use PlateScale.png>
-Package pdftex.def Info: PlateScale.png used on input line 252.
+Package pdftex.def Info: PlateScale.png used on input line 256.
 (pdftex.def)             Requested size: 413.86517pt x 239.6949pt.
- [4] <ku.png, id=32, 714.67pt x 317.185pt>
+ [4] [5 <./PlateScale.png>] <ku.png, id=36, 714.67pt x 317.185pt>
 File: ku.png Graphic file (type png)
  <use ku.png>
-Package pdftex.def Info: ku.png used on input line 318.
+Package pdftex.def Info: ku.png used on input line 324.
 (pdftex.def)             Requested size: 500.26558pt x 222.02797pt.
 
-Overfull \hbox (30.51059pt too wide) in paragraph at lines 318--319
+Overfull \hbox (30.51059pt too wide) in paragraph at lines 324--325
 [][] 
  []
 
-[5 <./PlateScale.png>] <dku.png, id=37, 714.67pt x 317.185pt>
+<dku.png, id=37, 714.67pt x 317.185pt>
 File: dku.png Graphic file (type png)
  <use dku.png>
-Package pdftex.def Info: dku.png used on input line 353.
+Package pdftex.def Info: dku.png used on input line 359.
 (pdftex.def)             Requested size: 500.26558pt x 222.02797pt.
 
-Overfull \hbox (30.51059pt too wide) in paragraph at lines 353--354
+Overfull \hbox (30.51059pt too wide) in paragraph at lines 359--360
 [][] 
  []
 
-[6 <./ku.png>] [7 <./dku.png>] [8] (./5planes.aux) ) 
+[6 <./ku.png>] [7 <./dku.png>] <LSST_PSF_comparison.png, id=49, 554.07pt x 170.6375pt>
+File: LSST_PSF_comparison.png Graphic file (type png)
+ <use LSST_PSF_comparison.png>
+Package pdftex.def Info: LSST_PSF_comparison.png used on input line 452.
+(pdftex.def)             Requested size: 443.2566pt x 136.51016pt.
+ <HSC_PSF_comparison.png, id=50, 554.07pt x 170.6375pt>
+File: HSC_PSF_comparison.png Graphic file (type png)
+ <use HSC_PSF_comparison.png>
+Package pdftex.def Info: HSC_PSF_comparison.png used on input line 463.
+(pdftex.def)             Requested size: 443.2566pt x 136.51016pt.
+ <DECam_PSF_comparison.png, id=51, 549.05125pt x 170.6375pt>
+File: DECam_PSF_comparison.png Graphic file (type png)
+ <use DECam_PSF_comparison.png>
+Package pdftex.def Info: DECam_PSF_comparison.png used on input line 472.
+(pdftex.def)             Requested size: 439.2416pt x 136.51016pt.
+ [8 <./LSST_PSF_comparison.png>] [9 <./HSC_PSF_comparison.png> <./DECam_PSF_comparison.png>] [10] (./5planes.aux) ) 
 Here is how much of TeX's memory you used:
- 4382 strings out of 493089
- 56777 string characters out of 6134842
- 138850 words of memory out of 5000000
- 7758 multiletter control sequences out of 15000+600000
+ 4404 strings out of 493089
+ 57304 string characters out of 6134842
+ 138901 words of memory out of 5000000
+ 7777 multiletter control sequences out of 15000+600000
  11063 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,15n,35p,478b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb>
-Output written on 5planes.pdf (8 pages, 500840 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb>
+Output written on 5planes.pdf (10 pages, 564783 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

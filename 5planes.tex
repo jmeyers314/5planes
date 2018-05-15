@@ -64,7 +64,10 @@ amplitude, which in our scalar field theory is:
 \end{equation}
 
 Note that the time dependence drops out in the amplitude-squared operation.  Given the above, the
-whole trick then is to figure out what is the set $K$.
+whole trick then is to figure out what is the set $K$.  We will assert here that $K$ can be
+developed by tracing a sufficiently dense initial set of rays (all representing the same initial
+incident plane wave) through the optical system in question and then reinterpretting each ray
+as a plane wave as it impacts the focal surface.
 
 \section{Lattices}
 
@@ -100,9 +103,9 @@ generally interested in just the lattice subsets for which $\mathrm{i},\mathrm{j
 
 \section{Pupil lattice}
 
-We are interested in the PSF of an incoming plane wave.  We assume the intensity of the wave is
-uniform over the telescope entrance pupil, which leads us to use a particularly simple lattice to
-describe the entrance pupil plane, with primitive lattice vectors
+We are interested in the PSF that develops from a single incoming plane wave.  We assume the
+intensity of the wave is uniform over the telescope entrance pupil, which leads us to use a
+particularly simple lattice to describe the entrance pupil plane, with primitive lattice vectors
 
 \begin{equation}
     \vec{u}_1 = \Delta u \, \hat{\imath}
@@ -239,6 +242,7 @@ or
 \begin{equation}
     A(\vec{x}_{\mathrm{pq}}) \propto
         \left[\mathrm{DFT}\left(P_{\mathrm{ij}} \exp\left(i \phi_{\mathrm{ij}} \right) \right)\right]_{\mathrm{pq}}
+    \label{eqn:fftpsf}
 \end{equation}
 
 \subsection{Sky plane}
@@ -267,10 +271,12 @@ primitive lattice vectors:
 
 \begin{equation}
     \vec{\theta_1} = -\frac{\lambda n}{N \Delta u} \hat{\imath}
+    \label{eqn:theta1par}
 \end{equation}
 
 \begin{equation}
     \vec{\theta_2} = -\frac{\lambda n}{N \Delta u} \hat{\jmath}
+    \label{eqn:theta2par}
 \end{equation}
 
 The telescope focal length conveniently divides out.
@@ -381,61 +387,104 @@ diagonal components are not the \textit{same}.  In particular, using $\vec{k} = 
 
 To transform from focal plane coordinates to sky coordinates, we use \textsc{batoid} to trace ray
 grids with slightly different incoming angles and look at where they focus on the focal plane to
-measure the Jacobian from a finite difference.  Because we specify the incoming ray angles using a
-gnomic projection, a second analytic Jacobian is then applied to convert from gnomic primitive vectors
-to spherical primitive vectors.
+measure the Jacobian from a finite difference.
 
-Continuing the above example, I find gnomic primitives of
+With this approach, and continuing the above example, I find gnomic primitives of
 
 \begin{equation}
-    \vec{g}_1 = \frac{1}{N \Delta u} (-7.50 \times 10^{-7} \hat{\imath} + 1.13 \times 10^{-12} \hat{\jmath})
+    \vec{\theta}_1 = \frac{1}{N \Delta u} (-7.50 \times 10^{-7} \hat{\imath} + 1.13 \times 10^{-12} \hat{\jmath})
 \end{equation}
 
 \begin{equation}
-    \vec{g}_2 = \frac{1}{N \Delta u} (1.39 \times 10^{-11} \hat{\imath} + -7.50 \times 10^{-7} \hat{\jmath})
+    \vec{\theta}_2 = \frac{1}{N \Delta u} (1.39 \times 10^{-11} \hat{\imath} + -7.50 \times 10^{-7} \hat{\jmath})
 \end{equation}
 
-and spherical primitives of
-
-\begin{equation}
-    \vec{\theta}_1 = \frac{1}{N \Delta u} (1.13 \times 10^{-12} \hat{\imath} + 7.50 \times 10^{-7} \hat{\jmath})
-\end{equation}
-
-\begin{equation}
-    \vec{\theta}_2 = \frac{1}{N \Delta u} (-7.50 \times 10^{-7} \hat{\imath} -1.39 \times 10^{-11} \hat{\jmath}).
-\end{equation}
-
-The spherical coordinate differentials $\delta \vec{\theta}_1$ and $\delta \vec{\theta}_2$ can be
-thought of as $\delta \phi$ and $\sin(\phi) \delta \theta$, where $\phi$ is the polar angle measured
-from the optic axis, and $\theta$ is the azimuthal angle measured counter-clockwise from the
-positive x-axis.  The conversion from gnomic primitive vectors to local spherical vectors is
-essentially only a rotation for this small field angle.
+(From the gnomic primitives, we ought to convert to real spherical coordinate primitives, but for
+the polar angles required here -- no more than 1.75 degrees, even for LSST -- the difference, aside
+from a rotation, is never more than about 0.1\%.)
 
 Notice that the diagonal elements are now equal, removing the distortion that appears in focal plane
-coordinates!  This result appears to be robust, being reproducible for Subaru/HSC, LSST, and
-Blanco/DECam optics and for various field angles.  I think this is likely a consequence of
-Liouville's theorem applied to optics, which roughly corresponds to
+coordinates!  In fact, these primitives are nearly indistinguishable from Eqs. \ref{eqn:theta1par}
+and \ref{eqn:theta2par}.  This result appears to be robust in my simulations, being reproducible for
+Subaru/HSC, LSST, and Blanco/DECam optics and for various field angles.  I think this is likely a
+consequence of Liouville's theorem applied to optics (conservation of étendue), which roughly
+corresponds to
 
 \begin{equation}
-    \delta \vec{u} \delta \vec{\theta} \propto \delta \vec{k} \delta {x}
+    \delta \vec{u}\, \delta \vec{\theta}\, \propto\, \delta \vec{k}\, \delta \vec{x}
 \end{equation}
 
-or
+or equivalently
 
 \begin{equation}
-    \frac{\partial \vec{k}}{\partial \vec{u}} \cdot \frac{\partial \vec{\theta}}{\partial \vec{x}} \propto \mathbb{1}_2
+    \frac{\partial \vec{k}}{\partial \vec{u}} \cdot \frac{\partial \vec{\theta}}{\partial \vec{x}}\, \propto\, \mathbb{1}_2
 \end{equation}
+
+The LHS of the above proportionality occurs in our transformation of primitive vectors from $U
+\rightarrow K \rightarrow X \rightarrow \Theta$.
 
 At any rate, it appears that we can ignore complications of coordinate systems and WCS's if we
-generate optical PSFs directly in sky coordinates.
+simply interpret the optical PSFs generated by Fourier optics as living directly in sky coordinates, using
+Eqs. \ref{eqn:theta1par} and \ref{eqn:theta2par}.
+
+\section{Fourier PSF vs. Huygens PSF}
+
+Our next task is to actually compare PSF surface brightness profiles generated by directly
+evaluating Eq. \ref{eqn:Huygens} and by using the DFT approximation Eq. \ref{eqn:fftpsf}  (This
+corresponds to alternately acknowledging or ignoring the small residuals shown in Figure
+\ref{fig:dku}).  Since we do have freedom of where (in $x$) to evaluate the direct sum PSF, but not
+the FFT PSF, we will choose to evaluate the former at the points dictated by the latter to make the
+comparison.
+
+For both algorithms, we evaluate the $\phi_{\vec{k}}$ by tracing rays to a reference sphere with
+center at the mean spot position on the focal plane and with radius approximately equal to the
+distance from the focal plane to the exit pupil.  The $\phi_{\vec{k}}$ are the relative
+phases of the rays as they cross the reference sphere.  We have checked that varying the reference sphere
+radius does not greatly influence the relative phases $\phi_{\vec{k}}$.
+
+Figures \ref{fig:LSST_psf_comparison}, \ref{fig:HSC_psf_comparison}, and
+\ref{fig:DECam_psf_comparison} show comparisons between PSFs generated using the FFT algorithm and
+those generated using the direct summation algorithm.  In all cases, the differences are on the
+order of a few parts per thousand of the peak surface brightness.
+
+
+\begin{figure}
+    \includegraphics[scale=0.8]{LSST_PSF_comparison.png}
+
+    \caption{LSST PSF Comparison for a point near the edge of the LSST field of view at 1.75 degrees
+    off-axis.  Left: PSF array determined using DFT algorithm.  Center: PSF array determined from
+    direct Huygens PSF sum.  Right: FFT array minus Huygens array.  The scales on the x- and y-axes
+    are in arcseconds. }
+
+    \label{fig:LSST_psf_comparison}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[scale=0.8]{HSC_PSF_comparison.png}
+
+    \caption{HSC PSF Comparison for a point near the edge of the HSC field of view at 0.74 degrees
+    off-axis.}
+
+    \label{fig:HSC_psf_comparison}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[scale=0.8]{DECam_PSF_comparison.png}
+
+    \caption{DECam PSF Comparison for a point near the edge of the HSC field of view at 1.1 degrees
+    off-axis.}
+
+    \label{fig:DECam_psf_comparison}
+\end{figure}
 
 \section{TODO}
 
 \begin{itemize}
-    \item Explicitly write out $\tilde{I}\left(\vec{q}\right)$
-    \item Add plots and commentary of $\vec{\theta}$ vs $\vec{x}$.
-    \item Comment on difference between gnomic and spherical, but don't do the computation since
-          it's very close to a pure rotation.
+    \item Use exact limits on above figure.
+    \item Donut PSF comparison.
+    \item Verify that we still get paraxial sky primitive vectors at different azimuthal angles.
+    \item Focal-plane PSF comparison of paraxial vs non-paraxial.
+    \item Look up DECam WF sensor defocus value
 \end{itemize}
 
 \end{document}

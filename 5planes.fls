@@ -152,6 +152,15 @@ INPUT dku.png
 INPUT ./dku.png
 INPUT ./dku.png
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT LSST_PSF_comparison.png
+INPUT ./LSST_PSF_comparison.png
+INPUT ./LSST_PSF_comparison.png
+INPUT HSC_PSF_comparison.png
+INPUT ./HSC_PSF_comparison.png
+INPUT ./HSC_PSF_comparison.png
+INPUT DECam_PSF_comparison.png
+INPUT ./DECam_PSF_comparison.png
+INPUT ./DECam_PSF_comparison.png
 INPUT 5planes.aux
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb
