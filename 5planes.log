@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 MAY 2018 19:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 MAY 2018 15:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -660,36 +660,76 @@ Overfull \hbox (30.51059pt too wide) in paragraph at lines 359--360
 [][] 
  []
 
-[6 <./ku.png>] [7 <./dku.png>] <LSST_PSF_comparison.png, id=49, 554.07pt x 170.6375pt>
+[6 <./ku.png>] [7 <./dku.png>] <LSST_PSF_comparison.png, id=49, 641.39626pt x 176.66pt>
 File: LSST_PSF_comparison.png Graphic file (type png)
  <use LSST_PSF_comparison.png>
-Package pdftex.def Info: LSST_PSF_comparison.png used on input line 452.
-(pdftex.def)             Requested size: 443.2566pt x 136.51016pt.
- <HSC_PSF_comparison.png, id=50, 554.07pt x 170.6375pt>
+Package pdftex.def Info: LSST_PSF_comparison.png used on input line 451.
+(pdftex.def)             Requested size: 448.97432pt x 123.66115pt.
+ <HSC_PSF_comparison.png, id=50, 643.40375pt x 176.66pt>
 File: HSC_PSF_comparison.png Graphic file (type png)
  <use HSC_PSF_comparison.png>
-Package pdftex.def Info: HSC_PSF_comparison.png used on input line 463.
-(pdftex.def)             Requested size: 443.2566pt x 136.51016pt.
- <DECam_PSF_comparison.png, id=51, 549.05125pt x 170.6375pt>
+Package pdftex.def Info: HSC_PSF_comparison.png used on input line 462.
+(pdftex.def)             Requested size: 450.37955pt x 123.66115pt.
+ <DECam_PSF_comparison.png, id=51, 652.4375pt x 176.66pt>
 File: DECam_PSF_comparison.png Graphic file (type png)
  <use DECam_PSF_comparison.png>
-Package pdftex.def Info: DECam_PSF_comparison.png used on input line 472.
-(pdftex.def)             Requested size: 439.2416pt x 136.51016pt.
- [8 <./LSST_PSF_comparison.png>] [9 <./HSC_PSF_comparison.png> <./DECam_PSF_comparison.png>] [10] (./5planes.aux) ) 
+Package pdftex.def Info: DECam_PSF_comparison.png used on input line 471.
+(pdftex.def)             Requested size: 456.70313pt x 123.66115pt.
+ <LSST_donut_comparison.png, id=52, 663.47874pt x 175.65625pt>
+File: LSST_donut_comparison.png Graphic file (type png)
+ <use LSST_donut_comparison.png>
+Package pdftex.def Info: LSST_donut_comparison.png used on input line 490.
+(pdftex.def)             Requested size: 464.43195pt x 122.95853pt.
+ <HSC_donut_comparison.png, id=53, 646.415pt x 171.64125pt>
+File: HSC_donut_comparison.png Graphic file (type png)
+ <use HSC_donut_comparison.png>
+Package pdftex.def Info: HSC_donut_comparison.png used on input line 501.
+(pdftex.def)             Requested size: 452.48741pt x 120.14804pt.
+ <DECam_donut_comparison.png, id=54, 662.475pt x 176.66pt>
+File: DECam_donut_comparison.png Graphic file (type png)
+ <use DECam_donut_comparison.png>
+Package pdftex.def Info: DECam_donut_comparison.png used on input line 510.
+(pdftex.def)             Requested size: 463.72934pt x 123.66115pt.
+ [8 <./LSST_PSF_comparison.png>] [9 <./HSC_PSF_comparison.png> <./DECam_PSF_comparison.png> <./LSST_donut_comparison.png> <./HSC_donut_comparison.png>]
+
+./5planes.tex:524: Package amsmath Error: \vec allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.524 ...ear mapping from pupil coordinate \vec{u}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./5planes.tex:525: Package amsmath Error: \vec allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.525 to focal wave vector \vec{k}
+                                   introduce up to few parts per thousand di...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[10 <./DECam_donut_comparison.png>] (./5planes.aux) ) 
 Here is how much of TeX's memory you used:
- 4404 strings out of 493089
- 57304 string characters out of 6134842
- 138901 words of memory out of 5000000
- 7777 multiletter control sequences out of 15000+600000
+ 4422 strings out of 493089
+ 57817 string characters out of 6134842
+ 138927 words of memory out of 5000000
+ 7792 multiletter control sequences out of 15000+600000
  11063 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,15n,35p,478b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb>
-Output written on 5planes.pdf (10 pages, 564783 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb>
+Output written on 5planes.pdf (10 pages, 658571 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
+ 118 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
